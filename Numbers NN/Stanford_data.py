@@ -75,7 +75,7 @@ initial_param = initial_param.flatten()
 
 # Using model_predictions, and add one due each prediction due to the fact class 0 had label 10 (training data), here
 # we generate the predictions for the training data. Need to add one based upon the indexxing in python. 
-model_predictions = predict(X, params, input_layer, hidden_layer, output_layer) + 1 
+model_predictions = predict(X, params, input_layer, hidden_layer, output_layer) 
 
 rand_num = np.random.randint(0, m-1, 20)
 
@@ -84,25 +84,28 @@ print(y[rand_num].T)
 
 # Now we will try to load some of our own handwritten examples and see if the model can determine what number we've drawn
 # need to apply some preprocessing to our figure.  
-image = Image.open('test_2.png')
+image = Image.open('test_5.png')
 grayscale_img = image.convert(mode='L')
 grayscale_img = grayscale_img.resize((pixel_dim,pixel_dim))
 pixel_image = np.invert(np.asarray(grayscale_img)).T
 data_image = pixel_image.reshape((1,pixel_dim*pixel_dim))/255
 data_image = np.insert(data_image, 0, 1, axis=1)
 
+# r is a parameter chosen from 0-4999, to pick the index of the test_data that we want to depict. 
 r = 1170
 test_data = X[r,1:].reshape((pixel_dim, pixel_dim)).T
 test_vec = X[r,1:]
 
-print(np.linalg.norm(test_data-pixel_image))
-print(np.amax(np.absolute(data_image)))
-print(np.amax(np.absolute(X[r,1:])))
-print(predict(data_image, params, input_layer, hidden_layer, output_layer)+1)
+# Print out what the model predicts the number to be. 
+print(predict(data_image, params, input_layer, hidden_layer, output_layer))
 
-fig = plt.figure(1)
-plt.imshow(test_data, cmap='gray_r')
+# Plot pixel picture of the r^{th} data point, set ind to True. 
+ind = False
+if ind:
+    fig = plt.figure(1)
+    plt.imshow(test_data, cmap='gray_r')
 
+# Plot pixel picture of our own data. 
 fig2 = plt.figure(2)
 plt.imshow(pixel_image.T/255, cmap='gray_r')
 
