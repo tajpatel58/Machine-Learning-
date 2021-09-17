@@ -29,7 +29,8 @@ X = data['X']
 y = data['y']
 
 
-# Some model dimensions
+# Some model dimensions, m = data size, n= feature length, lambd = regularization coefficient, 
+# epsilon is a value such that inital random weights for optimizer are sampled from the interval (-epsilon, epsilon).
 m = X.shape[0]
 n = X.shape[1] + 1 
 k = 10 #(number of classes)
@@ -71,19 +72,19 @@ initial_Theta2_vec = rand_initial_weights(epsilon, hidden_layer,output_layer)
 initial_param = np.hstack((initial_Theta1_vec, initial_Theta2_vec))
 initial_param = initial_param.flatten()
 
-#param_opt = op.fmin_cg(cost, initial_param, fprime=grad,maxiter = 50)
+# Optional argument whether to run the ML algorithm, can also use the default params. 
+optimize = 1
+if optimize:    
+    params = op.fmin_cg(cost, initial_param, fprime=grad,maxiter = 50)
 
 # Using model_predictions, and add one due each prediction due to the fact class 0 had label 10 (training data), here
 # we generate the predictions for the training data. Need to add one based upon the indexxing in python. 
-model_predictions = predict(X, params, input_layer, hidden_layer, output_layer) 
+model_predictions = predict(X, params, input_layer, hidden_layer, output_layer).reshape((m,1)) 
 
 rand_num = np.random.randint(0, m-1, 20)
 
-print(model_predictions[rand_num])
-print(y[rand_num].T)
-
 # Now we will try to load some of our own handwritten examples and see if the model can determine what number we've drawn
-# need to apply some preprocessing to our figure.  
+# need to apply some preprocessing to our figure.  Can use: https://kleki.com to draw our numbers. 
 image = Image.open('test_5.png')
 grayscale_img = image.convert(mode='L')
 grayscale_img = grayscale_img.resize((pixel_dim,pixel_dim))
@@ -109,5 +110,11 @@ if ind:
 fig2 = plt.figure(2)
 plt.imshow(pixel_image.T/255, cmap='gray_r')
 
+# Print accuracy on training data:
+model_accuracy = (y==model_predictions).sum()/m * 100
+print("The model Accuracy is:"+" "+str(model_accuracy)+"%")
+
 plt.show()
+
+
 
