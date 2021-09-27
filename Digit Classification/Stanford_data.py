@@ -73,7 +73,7 @@ initial_param = np.hstack((initial_Theta1_vec, initial_Theta2_vec))
 initial_param = initial_param.flatten()
 
 # Optional argument whether to run the ML algorithm, can also use the default params. 
-optimize = 1
+optimize = 0
 if optimize:    
     params = op.fmin_cg(cost, initial_param, fprime=grad,maxiter = 50)
 
