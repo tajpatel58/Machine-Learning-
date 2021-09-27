@@ -73,7 +73,7 @@ initial_param = np.hstack((initial_Theta1_vec, initial_Theta2_vec))
 initial_param = initial_param.flatten()
 
 # Optional argument whether to run the ML algorithm, can also use the default params. 
-optimize = 0
+optimize = 1
 if optimize:    
     params = op.fmin_cg(cost, initial_param, fprime=grad,maxiter = 50)
 
@@ -101,7 +101,7 @@ test_vec = X[r,1:]
 print(predict(data_image, params, input_layer, hidden_layer, output_layer))
 
 # Plot pixel picture of the r^{th} data point, set ind to True. 
-ind = False
+ind = True
 if ind:
     fig = plt.figure(1)
     plt.imshow(test_data, cmap='gray_r')
@@ -115,6 +115,4 @@ model_accuracy = (y==model_predictions).sum()/m * 100
 print("The model Accuracy is:"+" "+str(model_accuracy)+"%")
 
 plt.show()
-
-
 
