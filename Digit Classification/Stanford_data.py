@@ -73,7 +73,7 @@ initial_param = np.hstack((initial_Theta1_vec, initial_Theta2_vec))
 initial_param = initial_param.flatten()
 
 # Optional argument whether to run the ML algorithm, can also use the default params. 
-optimize = 1
+optimize = 0
 if optimize:    
     params = op.fmin_cg(cost, initial_param, fprime=grad,maxiter = 50)
 
@@ -85,7 +85,7 @@ rand_num = np.random.randint(0, m-1, 20)
 
 # Now we will try to load some of our own handwritten examples and see if the model can determine what number we've drawn
 # need to apply some preprocessing to our figure.  Can use: https://kleki.com to draw our numbers. 
-image = Image.open('test_5.png')
+image = Image.open('test_9_2.png')
 grayscale_img = image.convert(mode='L')
 grayscale_img = grayscale_img.resize((pixel_dim,pixel_dim))
 pixel_image = np.invert(np.asarray(grayscale_img)).T
@@ -93,7 +93,7 @@ data_image = pixel_image.reshape((1,pixel_dim*pixel_dim))/255
 data_image = np.insert(data_image, 0, 1, axis=1)
 
 # r is a parameter chosen from 0-4999, to pick the index of the test_data that we want to depict. 
-r = 1170
+r = 4700
 test_data = X[r,1:].reshape((pixel_dim, pixel_dim)).T
 test_vec = X[r,1:]
 
