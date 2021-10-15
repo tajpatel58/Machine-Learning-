@@ -1,5 +1,4 @@
 #%%
-from os import lseek
 import requests 
 from pprint import pprint 
 import pandas as pd
@@ -50,11 +49,25 @@ list_badges = json_badges['items']
 
 badges = [badge['badge_id'] for badge in list_badges]
 
-users_badges = f'https://api.stackexchange.com/2.3/badges/9878;204;600/recipients?site=stackoverflow&pagesize=5'
+users_badges = f'https://api.stackexchange.com/2.3/badges/9878;204;600/recipients?site=stackoverflow&pagesize=3'
 
 
-json_badges = requests.get(users_badges).json()
+badge_users = requests.get(users_badges).json()
 
-pprint(json_badges)
+pprint(badge_users)
+
+# %%
+
+# Pagination Task: Requesting the first 5 pages of questions from StackExchange.
+
+def pagination(endpoint): 
+    posts = [] 
+    for j in range(1, endpoint+1):
+        posts_data = requests.get('https://api.stackexchange.com/2.3/posts?page=&fromdate=1631577600&todate=1634169600&order=desc&sort=activity&site=stackoverflow')
+        json_posts = posts_data.json()
+        posts.append(json_posts)
+    return posts 
+
+
 
 # %%
