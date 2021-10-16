@@ -1,4 +1,8 @@
 # %%
+
+# Task: Given a string as our input, find the number of times we see a character that
+#  we've already seen before.
+
 def duplicateCharacters(input):
     # Change string input into list so we can loop through. 
     list_str = list(input)
@@ -22,6 +26,9 @@ def duplicateCharacters(input):
 
 print(duplicateCharacters('aaaasthreghionhgfe56666'))
 # %%
+
+# Task: Given a string of characters, find the second highest digit that occurs, 
+# if less than 2 digits then return -1. 
 def secondHighestDigit(input):
     # create a list of the characters in the string. 
     list_str = list(input) 
@@ -45,6 +52,11 @@ def secondHighestDigit(input):
 
 print(secondHighestDigit('dd5gkd45fsgv9cdfnj2'))
 # %%
+# Task: Suppose there is a robot who starts by facing north, we are given a string of characters
+# that represent the movements of this robot. We should only count for F,L,R in this string and 
+# other characters discarded. F = Forward, L = Turn Left, R = Turn right. Return the integer value
+# that denotes the number of moves the robot has to take to get back to it's starting position. 
+
 def flr(directions):
     # Lets first start by extracting the instructions for the robot. 
     instructions = []
