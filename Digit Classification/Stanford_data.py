@@ -1,13 +1,11 @@
 import scipy.io
 import numpy as np
-import tensorflow 
 import math
 from sig import sigmoid
 from cost_func import cost_func 
 from feed_forward import feed_forward
 import scipy.optimize as op
 from rand_initial_weights import rand_initial_weights
-from tensorflow.keras.datasets import mnist
 from predict import predict 
 from PIL import Image 
 import matplotlib.pyplot as plt
