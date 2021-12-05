@@ -13,9 +13,16 @@ driver.set_window_size(1200,1200)
 cookies_button = driver.find_element_by_id("consent_prompt_submit")
 cookies_button.click()
 
+sleep(2)
+
 post_code_box = driver.find_element_by_id("search")
 post_code_box.send_keys("NW2 6LW")
-post_code_box.send_keys(Keys.RETURN)
+
+sleep(2)
+#post_code_box.send_keys(Keys.RETURN)
+
+check_button = driver.find_element_by_xpath('//*[@id="content"]/main/div[1]/div[3]/div[1]/section[2]/section/div[10]/div/form/div/div/button')
+check_button.click()
 
 sleep(6)
 

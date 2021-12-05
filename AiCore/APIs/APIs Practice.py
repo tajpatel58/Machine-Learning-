@@ -63,11 +63,12 @@ pprint(badge_users)
 def pagination(endpoint): 
     posts = [] 
     for j in range(1, endpoint+1):
-        posts_data = requests.get('https://api.stackexchange.com/2.3/posts?page=&fromdate=1631577600&todate=1634169600&order=desc&sort=activity&site=stackoverflow')
+        posts_data = requests.get(f'https://api.stackexchange.com/2.3/posts?page={j}&fromdate=1631577600&todate=1634169600&order=desc&sort=activity&site=stackoverflow')
         json_posts = posts_data.json()
         posts.append(json_posts)
     return posts 
 
+pprint(pagination(5))
 
 
 # %%

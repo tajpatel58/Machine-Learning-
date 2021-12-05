@@ -63,8 +63,8 @@ node_5_2 = ListNode(val=5)
 
 x = addTwoNumbers(node_5_2, node_5_2)
 
-# while x.next != None:
-#     print(x.val)
-#     x = x.next
-# print(x.val)
+while x.next != None:
+    print(x.val)
+    x = x.next
+print(x.val)
 # %%
