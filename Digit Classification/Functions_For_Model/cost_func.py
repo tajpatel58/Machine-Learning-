@@ -4,6 +4,28 @@ from sig import sigmoid
 from sig import sigmoid_grad
 
 def cost_func(X, Y, params, lambd, input_layer, hidden_layer,output_layer):
+    """
+    Every supervised machine learning algorithm has some sort of cost function associated with it. 
+    This method here will output the cost at a particular point and the gradient of the cost function at this point. 
+    We need this function to apply gradient descent, and hence find the optimum model parameters. 
+    The gradient is obtained using backpropogation. 
+
+    Parameters:
+        X (numpy array): Design matrix for our model.
+        Y (numpy array): Labels matrix for the model.
+        params (numpy array): Unrolled vector of weights, used to predict and then we ouput the error.  
+        lambd (float): Regularization hyperparameter. 
+        input_layer (int): Integer size of the input layer. 
+        hidden_layer (int): Integer size of the hidden layer of the Neural Network. 
+        output_layer (int): Integer size of the output layer.
+
+    
+    Returns:
+        cost (float): The error in our model. 
+        grad (numpy array): An unrolled vector of values that correspond to the gradient
+                            at <params>. 
+        
+    """
     # need to return the cost and the gradient.
 
     Theta_1 = params[:hidden_layer*(input_layer+1)].reshape((hidden_layer,input_layer+1))
