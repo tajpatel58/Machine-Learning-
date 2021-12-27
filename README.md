@@ -54,14 +54,14 @@ I mean the implementation of key aspects of the Neural Network were written by m
 
 ### LeetCode and Project Euler:
 
-Both of these are platforms I used to solve coding questions and build my confidence at coding. LeetCode focuses more on DSA,\
+Both of these are platforms I used to solve coding questions and build my confidence at coding. LeetCode focuses more on DSA,
 whereas Project Euler focuses more on Number Theory. These directories contain the code I used to solve these problems.
 
 ---
 
 ### Stanford ML - Coursera:
 
-As mentioned above, I initially engaged with Machine Learning through this course. This course focused on the fundamentals of \
+As mentioned above, I initially engaged with Machine Learning through this course. This course focused on the fundamentals of 
 machine learning and algorithms. I gained familiarity with the following topics through assignments on Matlab:
 
 - Linear Regression and Logisitic Regression
