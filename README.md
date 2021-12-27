@@ -41,7 +41,7 @@ using the data.
 
 Initially I started learning about Machine Learning through a course: Machine Learning: Stanford University \
 on Coursera by Andrew Ng. The first thing I did after completing this course was I thought let me apply some of the \
-new skills I've gained, so I built a Digit Classification Model from scratch on the MNIST dataset. When I say from scratch,\
+new skills I've gained, so I built a Digit Classification Model from scratch on the MNIST dataset. When I say from scratch,
 I mean the implementation of key aspects of the Neural Network were written by me. In particular I wrote functions to:
 
 - Feed data through the Neural Network.
@@ -72,14 +72,14 @@ machine learning and algorithms. I gained familiarity with the following topics 
 - Principal Component Analysis
 - Optical Character Recognition
 
-The course was split into 10 weeks, each week ended with a mandatory coding Project. This directory contains PDF's \
+The course was split into 10 weeks, each week ended with a mandatory coding Project. This directory contains PDF's 
 for the assignments each week and the Matlab code I used to build a model for that assignment. 
 
 ---
 
 ### Miscellaneous: 
 
-Here I store some general scripts I've written when I've had an interview, or I've read something interesting and thought\
+Here I store some general scripts I've written when I've had an interview, or I've read something interesting and thought 
 it would be fun to implement. 
 
 ---
