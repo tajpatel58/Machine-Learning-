@@ -4,10 +4,9 @@ class DataOptimizer:
     
     def equally_distribute(self, data):
         pos_reviews = list(filter(lambda x: x.sentiment == 'Positive', data))
-        neut_reviews = list(filter(lambda x: x.sentiment == 'Neutral', data))
         neg_reviews = list(filter(lambda x: x.sentiment == 'Negative', data))
-        min_rev = min([len(pos_reviews), len(neut_reviews), len(neg_reviews)])
-        reviews = pos_reviews[:min_rev] + neut_reviews[ :min_rev] + neg_reviews[:min_rev]
+        min_rev = min([len(pos_reviews), len(neg_reviews)])
+        reviews = pos_reviews[:min_rev] + neg_reviews[:min_rev]
         return reviews
     
     def get_reviews_ratings(self):

@@ -5,10 +5,8 @@ class Review:
         self.sentiment = self.set_sentiment()
     
     def set_sentiment(self):
-        if self.rating <= 2:
+        if self.rating <= 3:
             return "Negative"
-        elif self.rating == 3:
-            return "Neutral"
         else:
             return "Positive"
         
