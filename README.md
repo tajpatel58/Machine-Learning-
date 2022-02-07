@@ -32,15 +32,20 @@ I wanted to build familiarity with the tasks of a Data Scientist/ Data Engineer,
 I try to do some independent projects that are applicable to the real world. An example would be: 
 
 - Sales Analysis: I gained some proficiency with Pandas and Regex in this project. I analysed some Sales Data\
-which was provided by a Youtuber: Keith Galli. In particular I answered some common business type questions \
+which was provided by a Youtuber: Keith Galli. In particular I answered some common business type questions 
 using the data. 
+
+- Reviews Classifier: Project to gain familiarity with Sci-Kit Learn. Fit an SVM model to classify Amazon reviews into "Positive"/"Negative" categories \
+  Used Tfidf vectorizer to transform the data into training/test data and optimized hyperparameters using GridSearchCV. Model can be downloaded \
+  and imported using Pickle from Models directory. 
+  
 
 ---
 
 ### Digit Classification
 
 Initially I started learning about Machine Learning through a course: Machine Learning: Stanford University \
-on Coursera by Andrew Ng. The first thing I did after completing this course was I thought let me apply some of the \
+on Coursera by Andrew Ng. The first thing I did after completing this course was I thought let me apply some of the
 new skills I've gained, so I built a Digit Classification Model from scratch on the MNIST dataset. When I say from scratch,
 I mean the implementation of key aspects of the Neural Network were written by me. In particular I wrote functions to:
 
