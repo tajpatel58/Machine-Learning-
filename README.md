@@ -35,8 +35,7 @@ I try to do some independent projects that are applicable to the real world. An 
 which was provided by a Youtuber: Keith Galli. In particular I answered some common business type questions 
 using the data. 
 
-- Reviews Classifier: Project to gain familiarity with Sci-Kit Learn. Fit an SVM model to classify Amazon reviews into "Positive"/"Negative" categories \
-  Used Tfidf vectorizer to transform the data into training/test data and optimized hyperparameters using GridSearchCV. Model can be downloaded \
+- Reviews Classifier: Project to gain familiarity with Sci-Kit Learn. Fit an SVM model to classify Amazon reviews into "Positive"/"Negative" categories. Used Tfidf vectorizer to transform the data into training/test data and optimized hyperparameters using GridSearchCV. Model can be downloaded \
   and imported using Pickle from Models directory. 
   
 
